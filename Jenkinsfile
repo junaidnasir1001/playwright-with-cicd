@@ -8,7 +8,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh '/mnt/c/Program\\ Files/nodejs/npx playwright install-deps'
+                    sh '"/mnt/c/Program Files/nodejs/npx" playwright install-deps'
                 }
             }
         }
