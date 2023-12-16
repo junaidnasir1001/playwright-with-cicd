@@ -8,11 +8,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Install Playwright without global flag
-                    sh 'npm install playwright'
-                    
-                    // Install browser dependencies
-                    sh 'npx playwright install-deps'
+                    sh '/mnt/c/Program\\ Files/nodejs/npx playwright install-deps'
                 }
             }
         }
