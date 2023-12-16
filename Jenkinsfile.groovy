@@ -18,8 +18,11 @@ pipeline {
             steps {
                 // Use NodeJS installation defined in Jenkins
                 script {
-                    def playwrightInstallation = tool 'NodeJS'
-                    sh "${playwrightInstallation}/bin/npm install"
+                    def nodejsInstallation = tool 'NodeJS'
+                    sh "${nodejsInstallation}/bin/npm install"
+                    // def playwrightInstallation = tool 'NodeJS'
+                    // sh "${playwrightInstallation}/bin/npm install"
+                    
                 }
             }
         }
