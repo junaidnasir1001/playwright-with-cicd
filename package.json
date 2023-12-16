@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "playwright:test": "npx playwright test",
-    "clean:tests": "rimraf tests"
+    "install": "npm install",
+    "clean": "rimraf tests",
+    "playwright:test": "npx playwright test"
   },
   "keywords": [],
   "author": "",
