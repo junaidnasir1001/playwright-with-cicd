@@ -1,26 +1,41 @@
 pipeline {
     agent any
-    tools {
-        // Specify the Node.js tool configured in Jenkins
-        nodejs 'NodeJS'
+    
+    environment {
+        NODE_VERSION = '14'
     }
+
     stages {
-        stage('Install Dependencies') {
+        stage('Checkout') {
             steps {
                 script {
-                    sh '/usr/bin/npx playwright install-deps'
+                    // Checkout your repository
+                    git 'https://github.com/junaidnasir1001/playwright-with-cicd.git'
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Install Dependencies') {
             steps {
                 script {
-                    // Install project dependencies
+                    // Install Node.js using nvm
+                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
+                    sh 'source ~/.nvm/nvm.sh'
+                    sh "nvm install ${NODE_VERSION}"
+                    sh "nvm use ${NODE_VERSION}"
+
+                    // Install Playwright dependencies
                     sh 'npm install'
-                    
+                    sh 'npx playwright install'
+                }
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                script {
                     // Run Playwright tests
-                    sh 'npm run testCase'
+                    sh 'npx playwright test --project=chromium'
                 }
             }
         }
