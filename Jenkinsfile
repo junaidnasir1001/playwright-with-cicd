@@ -8,11 +8,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    echo "User: ${env.USER}"
-                    echo "Home: ${env.HOME}"
-                    echo "Path: ${env.PATH}"
-                    sh 'sudo -n echo "sudo works"'
-                    sh 'sudo -n /usr/bin/npx playwright install-deps'
+                    sh '/usr/bin/npx playwright install-deps'
                 }
             }
         }
