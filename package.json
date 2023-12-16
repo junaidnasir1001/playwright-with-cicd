@@ -4,10 +4,8 @@
   "description": "Playwright test suite for kbplaywrite",
   "main": "index.js",
   "scripts": {
-    "install": "npm install",
-    "clean": "rimraf tests",
-    "playwright:test": "npx playwright test"
-  },
+    "testCase": "npx playwright test - project=chromium"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
