@@ -19,10 +19,10 @@ pipeline {
                 // Use NodeJS installation defined in Jenkins
                 script {
                     def nodejsInstallation = tool 'NodeJS'
-                    sh "${nodejsInstallation}/bin/npm install"
-                    // def playwrightInstallation = tool 'NodeJS'
-                    // sh "${playwrightInstallation}/bin/npm install"
-                    
+                    // Ensure that Node.js and npm are in the PATH
+                    sh "export PATH=${nodejsInstallation}/bin:\$PATH && node --version && npm --version"
+                    // Install dependencies
+                    sh "export PATH=${nodejsInstallation}/bin:\$PATH && npm install"
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
                 // Use NodeJS installation defined in Jenkins
                 script {
                     def playwrightInstallation = tool 'NodeJS'
-                    sh "${playwrightInstallation}/bin/npx playwright test"
+                    sh "export PATH=${playwrightInstallation}/bin:\$PATH && npx playwright test"
                 }
             }
         }
