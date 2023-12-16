@@ -6,14 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    // Checkout your repository
-                    git 'https://github.com/junaidnasir1001/playwright-with-cicd.git'
-                }
-            }
-        }
+        
 
         stage('Install Dependencies') {
             steps {
