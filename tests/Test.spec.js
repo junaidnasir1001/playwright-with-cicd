@@ -1,62 +1,37 @@
-const{test,expect} = require('@playwright/test')
+const { test, expect } = require('@playwright/test');
 
-test('This is 1st test on playwright',async ({page})=>{
+test('This is 1st test on playwright', async ({ page }) => {
+  await page.goto('http://129.150.40.148:8001/login');
 
-   await page.goto('http://129.150.40.148:8001/login');
+  await page.locator("//input[@name='username']").fill('pukatqa-admin');
+  await page.locator("//input[@name='password']").fill('12345678');
 
-   await page.locator("//input[@name='username']").fill('pukatqa-admin');
-   await page.locator("//input[@name='password']").fill('12345678');
+  await page.click("(//button[@type='submit'])[1]");
 
-   await page.click("(//button[@type='submit'])[1]")
+  // Additional changes in the current branch
+  // just for webhook testing
 
-<<<<<<< HEAD
- 
-=======
-//just for webhook testing
->>>>>>> origin/main
-   // await page.getByRole('input',{name:'username'}).fill('pukatqa-admin')
+  const pageTitle = page.title();
 
-   const pageTitle = page.title();
+  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
 
-   await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
+  console.log(pageTitle);
 
-   console.log( pageTitle)
+  await page.close();
+});
 
+test('Verify the URL of Dashboard', async ({ page }) => {
+  await page.goto('http://129.150.40.148:8001/login');
 
-   
+  await page.locator("//input[@name='username']").fill('pukatqa-admin');
+  await page.locator("//input[@name='password']").fill('12345678');
 
-   await page.close();
+  await page.click("(//button[@type='submit'])[1]");
 
+  const pageTitle = page.title();
 
+  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
+  console.log(pageTitle);
 
-})
-
-test('Verify the URL of Dashboard',async ({page})=>{
-
-   await page.goto('http://129.150.40.148:8001/login');
-
-   await page.locator("//input[@name='username']").fill('pukatqa-admin');
-   await page.locator("//input[@name='password']").fill('12345678');
-
-   await page.click("(//button[@type='submit'])[1]")
-
- 
-   // await page.getByRole('input',{name:'username'}).fill('pukatqa-admin')
-
-   const pageTitle = page.title();
-
-   await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
-   console.log( pageTitle)
-
-
-   
-
-   await page.close();
-
-
-<<<<<<< HEAD
-
-})
-=======
-})
->>>>>>> origin/main
+  await page.close();
+});
