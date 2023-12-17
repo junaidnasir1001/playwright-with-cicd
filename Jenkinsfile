@@ -31,9 +31,12 @@ pipeline {
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
 
                     // Append export lines to NVM script
-                    sh 'echo \'export NVM_DIR="$HOME/.nvm"\' >> "$HOME/.nvm/nvm.sh"'
-                    sh 'echo \'[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"\' >> "$HOME/.nvm/nvm.sh"'
-                    
+                    //sh 'echo \'export NVM_DIR="$HOME/.nvm"\' >> "$HOME/.nvm/nvm.sh"'
+                    //sh 'echo \'[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"\' >> "$HOME/.nvm/nvm.sh"'
+                    sh 'echo "export NVM_DIR=\"\$HOME/.nvm\"" >> "\$HOME/.nvm/nvm.sh"'
+                    sh 'echo "[ -s \"\$NVM_DIR/nvm.sh\" ] && \\. \"\$NVM_DIR/nvm.sh\"" >> "\$HOME/.nvm/nvm.sh"'
+
+
                     // Verify environment variables
                     sh 'env'
                 }
