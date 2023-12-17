@@ -13,6 +13,7 @@ test('This is 1st test on playwright', async ({ page }) => {
 
   const pageTitle = await page.title();
 
+  
   await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
 
   console.log(pageTitle);
