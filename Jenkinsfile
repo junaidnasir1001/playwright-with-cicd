@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         NODE_VERSION = '14'
+        PATH = "$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"
     }
 
     stages {
@@ -38,7 +39,7 @@ pipeline {
                     // sh 'export NVM_DIR="$MYHOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
                     // Run Playwright tests
-                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npx playwright test --project=chromium'
+                    sh 'npx playwright test --project=chromium'
                 }
             }
         }
