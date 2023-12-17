@@ -27,7 +27,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Update NVM installation script
+                            // Update NVM installation script
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
 
                     // Source the NVM script explicitly
@@ -38,8 +38,8 @@ pipeline {
                     sh 'env'
 
                     // Install Node.js and Playwright dependencies
-                    sh "nvm install ${NODE_VERSION}"
-                    sh "nvm use ${NODE_VERSION}"
+                    sh "NVM_PROFILE='$HOME/.bashrc' nvm install ${NODE_VERSION}"
+                    sh "NVM_PROFILE='$HOME/.bashrc' nvm use ${NODE_VERSION}"
                     sh 'npm install'
                     sh 'npx playwright install'
                 }
