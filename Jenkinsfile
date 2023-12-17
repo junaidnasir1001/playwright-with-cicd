@@ -22,9 +22,9 @@ pipeline {
                     // Install Node.js and Playwright dependencies
                     // sh "nvm install ${NODE_VERSION}"
                     // sh "nvm use ${NODE_VERSION}"
-                    sh 'export PATH="$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"'
-                    sh 'npm install'
-                    sh 'npx playwright install'
+                    // sh 'export PATH="$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"'
+                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npm install'
+                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npx playwright install'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                     // sh 'export NVM_DIR="$MYHOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
                     // Run Playwright tests
-                    sh 'npx playwright test --project=chromium'
+                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npx playwright test --project=chromium'
                 }
             }
         }
