@@ -20,8 +20,8 @@ pipeline {
                     sh 'env'
 
                     // Install Node.js and Playwright dependencies
-                    sh "nvm install ${NODE_VERSION}"
-                    sh "nvm use ${NODE_VERSION}"
+                    // sh "nvm install ${NODE_VERSION}"
+                    // sh "nvm use ${NODE_VERSION}"
                     sh 'npm install'
                     sh 'npx playwright install'
                 }
