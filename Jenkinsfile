@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                             // Update NVM installation script
-                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
+                    //sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
 
                     // // // Source the NVM script explicitly
                     // // sh 'export NVM_DIR="$HOME/.nvm"'
