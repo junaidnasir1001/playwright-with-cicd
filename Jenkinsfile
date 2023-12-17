@@ -41,7 +41,7 @@ pipeline {
                     // sh 'export NVM_DIR="$MYHOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
                     // Run Playwright tests
-                    sh 'npx playwright test --project=chromium'
+                    sh 'npm run testCase'
                 }
             }
         }
