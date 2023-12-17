@@ -10,11 +10,11 @@ pipeline {
             steps {
                 script {
                     // Update NVM installation script
-                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
+                    // sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
                     sh 'export MYHOME=/home/JankinsVm'
                     // Source the NVM script explicitly
-                    sh 'export NVM_DIR="$MYHOME/.nvm"'
-                    sh '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
+                    // sh 'export NVM_DIR="$MYHOME/.nvm"'
+                    // sh '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
                     // Verify environment variables
                     sh 'env'
@@ -34,7 +34,7 @@ pipeline {
                     sh 'echo $MYHOME'
 
                     // Source nvm.sh directly
-                    sh 'export NVM_DIR="$MYHOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
+                    // sh 'export NVM_DIR="$MYHOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
                     // Run Playwright tests
                     sh 'npx playwright test --project=chromium'
