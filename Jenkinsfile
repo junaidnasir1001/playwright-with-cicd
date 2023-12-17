@@ -26,6 +26,8 @@ pipeline {
                     sh 'npm install'
                     sh 'npx playwright install'
                     sh 'npm list'
+                    sh 'node --version'
+                    sh 'npm --version'
                 }
             }
         }
