@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        NODE_VERSION = '14'
+        NODE_VERSION = '16'
         PATH = "$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"
     }
 
