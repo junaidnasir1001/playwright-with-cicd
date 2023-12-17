@@ -31,6 +31,8 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 script {
+                    sh 'echo $HOME'
+                    
                     // Source nvm.sh directly
                     sh 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
 
