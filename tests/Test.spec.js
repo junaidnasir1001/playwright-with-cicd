@@ -1,37 +1,39 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect, describe } from '@playwright/test';
 
-test('This is 1st test on playwright', async ({ page }) => {
-  await page.goto('http://129.150.40.148:8001/login');
+describe('My Test Suite', () => {
+  test('This is 1st test on playwright', async ({ page }) => {
+    await page.goto('http://129.150.40.148:8001/login');
 
-  await page.locator("//input[@name='username']").fill('pukatqa-admin');
-  await page.locator("//input[@name='password']").fill('12345678');
+    await page.locator("//input[@name='username']").fill('pukatqa-admin');
+    await page.locator("//input[@name='password']").fill('12345678');
 
-  await page.click("(//button[@type='submit'])[1]");
+    await page.click("(//button[@type='submit'])[1]");
 
-  // Additional changes in the current branch
-  // just for webhook testing
+    // Additional changes in the current branch
+    // just for webhook testing
 
-  const pageTitle = page.title();
+    const pageTitle = await page.title();
 
-  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
+    await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
 
-  console.log(pageTitle);
+    console.log(pageTitle);
 
-  await page.close();
-});
+    await page.close();
+  });
 
-test('Verify the URL of Dashboard', async ({ page }) => {
-  await page.goto('http://129.150.40.148:8001/login');
+  test('Verify the URL of Dashboard', async ({ page }) => {
+    await page.goto('http://129.150.40.148:8001/login');
 
-  await page.locator("//input[@name='username']").fill('pukatqa-admin');
-  await page.locator("//input[@name='password']").fill('12345678');
+    await page.locator("//input[@name='username']").fill('pukatqa-admin');
+    await page.locator("//input[@name='password']").fill('12345678');
 
-  await page.click("(//button[@type='submit'])[1]");
+    await page.click("(//button[@type='submit'])[1]");
 
-  const pageTitle = page.title();
+    const pageTitle = await page.title();
 
-  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
-  console.log(pageTitle);
+    await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
+    console.log(pageTitle);
 
-  await page.close();
+    await page.close();
+  });
 });
