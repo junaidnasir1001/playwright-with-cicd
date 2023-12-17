@@ -30,13 +30,13 @@ pipeline {
                             // Update NVM installation script
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
 
-                    // // Source the NVM script explicitly
-                    // sh 'export NVM_DIR="$HOME/.nvm"'
-                    // sh '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
-                    // Source nvm.sh directly
-                    sh 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
-                    // Verify environment variables
-                    sh 'env'
+                    // // // Source the NVM script explicitly
+                    // // sh 'export NVM_DIR="$HOME/.nvm"'
+                    // // sh '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
+                    // // Source nvm.sh directly
+                    // sh 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
+                    // // Verify environment variables
+                    // sh 'env'
 
                     // Install Node.js and Playwright dependencies
                     sh "nvm install ${NODE_VERSION}"
