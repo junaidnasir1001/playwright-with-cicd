@@ -23,8 +23,8 @@ pipeline {
                     // sh "nvm install ${NODE_VERSION}"
                     // sh "nvm use ${NODE_VERSION}"
                     // sh 'export PATH="$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"'
-                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npm install'
-                    sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npx playwright install'
+                    // sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npm install'
+                    // sh '/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/npx playwright install'
                 }
             }
         }
