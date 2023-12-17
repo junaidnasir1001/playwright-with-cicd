@@ -25,6 +25,7 @@ pipeline {
                     // sh "nvm use ${NODE_VERSION}"
                     sh 'npm install'
                     sh 'npx playwright install'
+                    sh 'npm list'
                 }
             }
         }
