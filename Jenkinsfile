@@ -44,6 +44,7 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 script {
+                    sh '. "$HOME/.nvm/nvm.sh"'
                     // Run Playwright tests
                     sh 'npx playwright test --project=chromium'
                 }
