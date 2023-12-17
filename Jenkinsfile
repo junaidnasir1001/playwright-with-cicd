@@ -33,7 +33,8 @@ pipeline {
                     // // Source the NVM script explicitly
                     // sh 'export NVM_DIR="$HOME/.nvm"'
                     // sh '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
-
+                    // Load nvm into the environment
+                    load '$HOME/.nvm/nvm.sh'
                     // Verify environment variables
                     sh 'env'
 
