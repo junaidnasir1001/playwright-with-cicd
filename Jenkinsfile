@@ -22,6 +22,7 @@ pipeline {
                     // Install Node.js and Playwright dependencies
                     // sh "nvm install ${NODE_VERSION}"
                     // sh "nvm use ${NODE_VERSION}"
+                    sh 'export PATH="$PATH:/home/JankinsVm/.nvm/versions/node/v14.21.3/bin/"'
                     sh 'npm install'
                     sh 'npx playwright install'
                 }
