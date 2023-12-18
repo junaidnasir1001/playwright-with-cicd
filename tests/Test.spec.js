@@ -8,9 +8,7 @@ test('This is 1st test on playwright', async ({ page }) => {
 
   await page.click("(//button[@type='submit'])[1]");
 
-  // Additional changes in the current branch
-  // just for webhook testing
-
+  
   const pageTitle = await page.title();
 
   
