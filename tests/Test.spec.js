@@ -29,7 +29,7 @@ test('Verify the URL of Dashboard', async ({ page }) => {
 
   const pageTitle = await page.title();
 
-  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard1git");
+  await expect(page).toHaveURL("http://129.150.40.148:8001/admin/dashboard");
   console.log(pageTitle);
 
   await page.close();
